@@ -1,0 +1,31 @@
+{
+    "name": "noahfrederick/spionic",
+    "description": "Convert SPIonic-encoded ASCII strings to Unicode",
+    "type": "library",
+    "require": {
+        "php": "^7.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "SPIonic\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SPIonic\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Noah Frederick",
+            "email": "code@noahfrederick.com"
+        }
+    ]
+}
