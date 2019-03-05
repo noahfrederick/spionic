@@ -1,6 +1,10 @@
-# spionic
+# Convert SPIonic Greek to Unicode
 
-PHP library for converting SPIonic-encoded ASCII strings to Unicode
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/noahfrederick/spionic.svg?style=flat-square)](https://packagist.org/packages/noahfrederick/spionic)
+[![Software License](https://img.shields.io/packagist/l/noahfrederick/spionic.svg?style=flat-square)](LICENSE)
+[![Build Status](https://img.shields.io/travis/noahfrederick/spionic/master.svg?style=flat-square)](https://travis-ci.org/noahfrederick/spionic)
+
+PHP library for converting SPIonic-encoded ASCII strings to Unicode.
 
 SPIonic is a public domain font that represents [ASCII][ascii] characters as
 Greek letters and diacritics. It uses a scheme based on
