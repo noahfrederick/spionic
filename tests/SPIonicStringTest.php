@@ -204,6 +204,8 @@ class SPIonicStringTest extends TestCase
             ['o4', 'ὃ'],
             ['u4', 'ὓ'],
             ['w4', 'ὣ'],
+            ['i5', 'ΐ'],
+            ['i6', 'ῒ'],
             ['a=', 'ᾶ'],
             ['h=', 'ῆ'],
             ['i=', 'ῖ'],
