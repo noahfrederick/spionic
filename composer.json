@@ -21,7 +21,7 @@
     "scripts": {
         "test": "vendor/bin/phpunit"
     },
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-or-later",
     "authors": [
         {
             "name": "Noah Frederick",
