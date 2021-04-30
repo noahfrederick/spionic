@@ -128,9 +128,25 @@ class SPIonicString
      *
      * @var array
      */
-    private static $conversionsNormalize = [
+    private static $conversionsNormalizeWidth = [
         ')' => '0',  '(' => '9',  '&' => '/',  '_' => '\\',  '~' => '=',  '!' => '1',  '@' => '2',  '}' => ']',
         '#' => '3',  '$' => '4',  '{' => '[',
+    ];
+
+    /**
+     * Translations of adjacent diacritics to combined.
+     *
+     * @var array
+     */
+    private static $conversionsNormalizeCombined = [
+        '0/' => '1', '/0' => '1',
+        '0\\' => '2', '\\0' => '2',
+        '9/' => '3', '/9' => '3',
+        '9\\' => '4', '\\9' => '4',
+        '+/' => '5', '/+' => '5',
+        '+\\' => '6', '\\+' => '6',
+        '0=' => ']', '=0' => ']',
+        '9=' => '[', '=9' => '[',
     ];
 
     /**
@@ -150,7 +166,8 @@ class SPIonicString
      */
     public function normalized(): string
     {
-        return strtr($this->originalStr, static::$conversionsNormalize);
+        $str = strtr($this->originalStr, static::$conversionsNormalizeWidth);
+        return strtr($str, static::$conversionsNormalizeCombined);
     }
 
     /**

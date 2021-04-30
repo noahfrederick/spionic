@@ -59,6 +59,16 @@ class SPIonicStringTest extends TestCase
     }
 
     /**
+     * Adjacent uncombined diacritical marks
+     *
+     * @dataProvider uncombinedProvider
+     */
+    public function testUncombined($spionic, $unicode)
+    {
+        $this->assertEquals($unicode, (new SPIonicString($spionic))->toUnicode());
+    }
+
+    /**
      * A continuous run of text
      */
     public function testCombined()
@@ -296,6 +306,62 @@ class SPIonicStringTest extends TestCase
             ['a)', 'ἀ'],
             ['a(', 'ἁ'],
             ['a&', 'ά'],
+        ];
+    }
+
+    public function uncombinedProvider()
+    {
+        return [
+            ['a0/', 'ἄ'],
+            ['a/0', 'ἄ'],
+            ['a)/', 'ἄ'],
+            ['a/)', 'ἄ'],
+            ['a9/', 'ἅ'],
+            ['a/9', 'ἅ'],
+            ['a(/', 'ἅ'],
+            ['a/(', 'ἅ'],
+            ['a0&', 'ἄ'],
+            ['a&0', 'ἄ'],
+            ['a)&', 'ἄ'],
+            ['a&)', 'ἄ'],
+            ['a9&', 'ἅ'],
+            ['a&9', 'ἅ'],
+            ['a(&', 'ἅ'],
+            ['a&(', 'ἅ'],
+
+            ['a0\\', 'ἂ'],
+            ['a\\0', 'ἂ'],
+            ['a)\\', 'ἂ'],
+            ['a\\)', 'ἂ'],
+            ['a9\\', 'ἃ'],
+            ['a\\9', 'ἃ'],
+            ['a(\\', 'ἃ'],
+            ['a\\(', 'ἃ'],
+            ['a0_', 'ἂ'],
+            ['a_0', 'ἂ'],
+            ['a)_', 'ἂ'],
+            ['a_)', 'ἂ'],
+            ['a9_', 'ἃ'],
+            ['a_9', 'ἃ'],
+            ['a(_', 'ἃ'],
+            ['a_(', 'ἃ'],
+
+            ['w=0', 'ὦ'],
+            ['w0=', 'ὦ'],
+            ['w~0', 'ὦ'],
+            ['w0~', 'ὦ'],
+            ['w=)', 'ὦ'],
+            ['w)=', 'ὦ'],
+            ['w~)', 'ὦ'],
+            ['w)~', 'ὦ'],
+            ['w=9', 'ὧ'],
+            ['w9=', 'ὧ'],
+            ['w~9', 'ὧ'],
+            ['w9~', 'ὧ'],
+            ['w=(', 'ὧ'],
+            ['w(=', 'ὧ'],
+            ['w~(', 'ὧ'],
+            ['w(~', 'ὧ'],
         ];
     }
 
