@@ -3,10 +3,10 @@
     "description": "Convert SPIonic-encoded ASCII strings to Unicode",
     "type": "library",
     "require": {
-        "php": "^7.1"
+        "php": "^7.1|^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5"
+        "phpunit/phpunit": "*"
     },
     "autoload": {
         "psr-4": {
